@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TtsDb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- Wrap all page content here -->
+<div id="wrap">
+<!--   <div class="sign_up">
+	      	<strong><p class="sign_up">
+				<% if user_signed_in? %>
+					Logged in as <strong><%=current_user.email %></strong>
+					<%= link_to 'Edit Profile', edit_user_registration_path, class: 'navbar-link' %>
+					<%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+				<% else %>
+					<%= link_to "Sign Up", new_user_registration_path, class: 'navbar-link' %>
+					<%= link_to "Login", new_user_session_path, class: 'navbar-link' %>
+				<% end %>
+	      </div> -->
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">TTSdb</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+         <ul class="nav navbar-nav navbar-right">
+	        <div class="user-widget">
+				<% if user_signed_in? %>
+					Logged in as <strong><%=current_user.email %></strong>
+					<%= link_to 'Edit Profile', edit_user_registration_path, class: 'navbar-link' %>
+					<%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+				<% else %>
+					<%= link_to "Sign Up", new_user_registration_path, class: 'navbar-link' %>
+					<%= link_to "Login", new_user_session_path, class: 'navbar-link' %>
+				<% end %>
+			</div>
+	      </ul>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  
+
+
+  <!-- Begin page content -->
+  <div class="container">
+    <div class="page-header">
+      <h1>Learn to Code and do something HUGE!</h1>
+    </div>
+    <p class="lead">In 8 weeks, you'll be able to make <strong>me</strong>!</p>
+    <p>Back to <a href="../sticky-footer">the future </a> minus the navbar.</p>
+  </div>
+</div>
+<%= yield %>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted credit">TTSdb <a href="http://techtalentsouth.com">TTS</a> and <a href="http://ryanfait.com/sticky-footer/">Bullard Cardais Creations</a>.</p>
+  </div>
+</div>
+
+
+</body>
+
+
+
+</html>
